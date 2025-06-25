@@ -1,1 +1,147 @@
-/usr/share/X11/xkb/symbols/tnilkey
+// Font Mappings & Features
+// P & Z are remapped
+// {} and () and " are mapped
+// most special chars and almost all capital letters are unmapped
+// q is unmapped
+// shift + bckspc for removing ext but not _/^, backspace removes both
+// · periodcentered for registers
+// ellipsis.vert for tertiary
+// _ begins single sub 9 for underposed shortcuts
+// _ for bottom diacritics & extensions
+// _ & ^ for numerical extensions
+// ^ for top diacritics & extensions
+// ^ tert 0 single sub 11
+// ' to flip char
+// < & > for left & right diacritics
+
+// TNILKey Features
+// q is shortcut for zabovedot, shift+q = Z (bias adjunct)
+// alt+shift q = q. Since q isn't used in TNIL or by the font; it's kept in case of necessity
+
+// not needed â
+// o + doulbe acute U0151
+// · periodcentered
+// ⋮ ellipsisvert U22EE
+// almost equal U2248
+// alt + + = almost equal to symbol
+// alt+shift + = identical / triple bar symbol U2261
+
+
+default partial alphanumeric_keys modifier_keys
+xkb_symbols "tnilkey" {
+
+    //virtual_modifiers Shift,AltGr,Tab
+
+    include "level3(ralt_switch)"
+    include "us(basic)"
+    name[Group1]= "tnilkey";
+
+	// key <LALT> {[  ISO_Level4_Shift  ], type="ONE_LEVEL" };
+	// key <LALT> {[  Alt_L  ], type[group1]="ONE_LEVEL", virtualModifier= LevelFour, actions = [ SetMods(modifiers=LevelFour) ] };
+	key <LALT> {[  Alt_L  ], type[group1]="ONE_LEVEL" };
+	// key <LALT> {[  Alt_L  ], type[Group1]="ONE_LEVEL" };
+	// key <ALT> {[  ISO_Level4_Shift  ], type="ONE_LEVEL" };
+	// key <ALT> {[  Alt_L  ], type[group1]="ONE_LEVEL", virtualModifier= LevelFour, actions = [ SetMods(modifiers=LevelFour) ] };
+	key <ALT> {[  Alt_L  ], type[group1]="ONE_LEVEL" };
+	// key <ALT> {[  Alt_L  ], type[Group1]="ONE_LEVEL" };
+	//key <LVL4> {[  ISO_Level4_Shift  ]};
+	// modifier_map Mod4 { <LALT> };
+	// modifier_map Alt_L { <LALT> };
+
+
+
+    //modifier_map Mod4 { <TAB> };
+    //interpret Tab { action = SetMods(modifiers=Mod4) };
+//    key <TAB> { type="UNMODIFIED", [ NoSymbol ], repeat=no, actions = [ SetMods(modifiers=Mod4) ] };
+
+    // key <TAB> { actions = [ SetMods(modifiers=Mod4) ] };
+    // key <TAB> { [ Alt_R ] };
+	// key <ALTL> { [ ISO_Level4_Shift ] , actions = [ SetMods(modifiers=Mod4) ] };
+	// key <ALTL> { [ ISO_Level4_Shift ], type[Group1]="ONE_LEVEL" };
+	// key <LALT> { [ ISO_Level4_Shift ], type[Group1]="ONE_LEVEL"};
+	// key <ALTL> { [ grave ] };
+	//key <ALTR> { [ grave ] };
+    // key <ALTL> { [ Alt_L ] , actions = [ SetMods(modifiers=Mod4) ] };
+    //key 64 { [ Alt_R ] };
+	// modifier_map Mod4 { Alt_L };
+	//key <LALT> {[  ISO_Level4_Shift  ], type[group1]="ONE_LEVEL" };
+	// key <LALT> {[  ISO_Level4_Shift  ], type[group1]="ONE_LEVEL"};
+	// key <LALT> {[  ISO_Level4_Shift  ]};
+	// key <64> {[  ISO_Level4_Shift  ]};
+	// modifier_map Alt_L { ISO_Level4_Shift };
+	//modifier_map Mod4 { ISO_Level4_Shift };
+
+//    key <CAPS> { [ Caps_Lock, Caps_Lock, Caps_Lock ], actions = [ SetMods(modifiers=Shift) ] }; //
+//    key <LFSH> { type[group1] = "ONE_LEVEL", [  Shift_L ] };
+
+    key <TLDE>	{type[group1]="FOUR_LEVEL", [   grave,	 asciitilde	]};
+    key <AE01>	{type[group1]="FOUR_LEVEL", [	 1,	 exclam		]};
+    key <AE02>	{type[group1]="FOUR_LEVEL", [	 2,	 at		]};
+    key <AE03>	{type[group1]="FOUR_LEVEL", [	 3,	 numbersign	]};
+    key <AE04>	{type[group1]="FOUR_LEVEL", [	 4,	 dollar		]};
+    key <AE05>	{type[group1]="FOUR_LEVEL", [	 5,	 percent	]};
+    key <AE06>	{type[group1]="FOUR_LEVEL", [	 6,	 asciicircum	]};
+    key <AE07>	{type[group1]="FOUR_LEVEL", [	 7,	 ampersand	]};
+    key <AE08>	{type[group1]="FOUR_LEVEL", [	 8,	 asterisk	]};
+    key <AE09>	{type[group1]="FOUR_LEVEL", [	 9,	 parenleft	]};
+    key <AE10>	{type[group1]="FOUR_LEVEL", [	 0,	 parenright	]};
+    key <AE11>	{type[group1]="FOUR_LEVEL", [   minus,	 underscore	]};
+    key <AE12>	{type[group1]="FOUR_LEVEL", [   equal,	 plus, U2248, U2261]}; // almost equal to, triple bar
+
+    //key <AD01>	{[	 ż,	 Z			]};
+    key <AD01>	{type[group1]="FOUR_LEVEL", [	 zabovedot,	 Z, U0151, q	]}; // q key
+    key <AD02>	{type[group1]="FOUR_LEVEL", [	 w,	 W				]};
+    key <AD03>	{type[group1]="FOUR_LEVEL", [	 e,	 ediaeresis,	eacute,	ecircumflex	]};
+    key <AD04>	{type[group1]="FOUR_LEVEL", [	 r,	 rcaron				]};
+    key <AD05>	{type[group1]="FOUR_LEVEL", [	 t,	 tcedilla			]};
+    key <AD06>	{type[group1]="FOUR_LEVEL", [	 y,	 Y				]};
+    key <AD07>	{type[group1]="FOUR_LEVEL", [	 u,	 udiaeresis,	uacute,	ucircumflex	]};
+    key <AD08>	{type[group1]="FOUR_LEVEL", [	 i,	 idiaeresis,	iacute,	icircumflex	]};
+    key <AD09>	{type[group1]="FOUR_LEVEL", [	 o,	 odiaeresis,	oacute,	ocircumflex	]};
+    key <AD10>	{type[group1]="FOUR_LEVEL", [	 p,	 P				]};
+    key <AD11>	{type[group1]="FOUR_LEVEL", [ bracketleft,	 braceleft			]};
+    key <AD12>	{type[group1]="FOUR_LEVEL", [ bracketright, braceright			]};
+
+//    key <TAB> { [ Tab, Tab, Tab ] };
+    key <AC01>	{type[group1]="FOUR_LEVEL", [	 a,	 adiaeresis, 	aacute,	acircumflex	]};
+    key <AC02>	{type[group1]="FOUR_LEVEL", [	 s,	 scaron				]};
+    key <AC03>	{type[group1]="FOUR_LEVEL", [	 d,	 U01E11		]};
+    key <AC04>	{type[group1]="FOUR_LEVEL", [	 f,	 F				]};
+    key <AC05>	{type[group1]="FOUR_LEVEL", [	 g,	 G				]};
+    key <AC06>	{type[group1]="FOUR_LEVEL", [	 h,	 H				]};
+    key <AC07>	{type[group1]="FOUR_LEVEL", [	 j,	 J				]};
+    key <AC08>	{type[group1]="FOUR_LEVEL", [	 k,	 K				]};
+    key <AC09>	{type[group1]="FOUR_LEVEL", [	 l,	 lcedilla			]};
+    key <AC10>	{type[group1]="FOUR_LEVEL", [ semicolon,	 colon				]};
+    key <AC11>	{type[group1]="FOUR_LEVEL", [ apostrophe,	 quotedbl			]};
+    key <BKSL>	{type[group1]="FOUR_LEVEL", [ backslash,	 bar				]};
+
+    key <AB01>	{type[group1]="FOUR_LEVEL", [	 z,	 zcaron, zabovedot]};
+    key <AB02>	{type[group1]="FOUR_LEVEL", [	 x,	 X		]};
+    key <AB03>	{type[group1]="FOUR_LEVEL", [	 c,	 ccaron, ccedilla]};
+    key <AB04>	{type[group1]="FOUR_LEVEL", [	 v,	 V		]};
+    key <AB05>	{type[group1]="FOUR_LEVEL", [	 b,	 B		]};
+    key <AB06>	{type[group1]="FOUR_LEVEL", [	 n,	 ncaron		]};
+    key <AB07>	{type[group1]="FOUR_LEVEL", [	 m,	 M		]};
+    key <AB08>	{type[group1]="FOUR_LEVEL", [   comma,	 less		]};
+    key <AB09>	{type[group1]="FOUR_LEVEL", [  periodcentered,	 greater, U22EE ]};
+    key <AB10>	{type[group1]="FOUR_LEVEL", [   slash,	 question	]};
+
+
+//    key <CAPS> { [ Caps_Lock, Caps_Lock, Caps_Lock ], actions = [ SetMods(modifiers=Shift) ] }; //
+//    key <CAPS> { [ ISO_Level3_Shift ], actions = [ SetMods(modifiers=Shift) ] }; //
+//    key <CAPS> { [ Caps_Lock, Caps_Lock, Caps_Lock ], actions = [ SetMods(modifiers=Shift), LockMods(modifiers=Lock) ] }; //
+//    key <AC01> { [ UC001B, UC0047, UC005C ] }; // q'
+
+//    key <BKSL> { [ UC0061, UC0011, UC004F ] } ; // 1e16
+
+//    key <LFSH> { type[group1] = "ONE_LEVEL", [  Shift_L ] };
+//    key <LSGT> { [ UC004F, UC004F, UC004F ] }; // ''''
+
+//  key <AB08> { [ UC0000, UC0000, UC006E ] }; // '
+//  key <AB09> { [ UC0001, UC0001, UC006F ] }; // ''
+//  key <AB10> { [ UC0002, UC0002, UC0070 ] }; // '''
+
+//    key <RTSH> { type[group1] = "ONE_LEVEL", [  Shift_R ] };
+//    key <SPCE> { [ space, underscore ] }; // space
+};
