@@ -6,6 +6,7 @@ Copy this file to /usr/share/X11/xkb/tnilkey. Then run `setxkbmap tnilkey`. I ad
 
 ## Keymap
 
+```
 Shift + vowel adds diareses: shift + a -> ä
 Alt + vowel adds acute: alt + a -> á
 Alt + shift + vowel adds circumflex: alt + shift + a -> â
@@ -33,3 +34,4 @@ And so on
 
 Some special symbols are also mapped:
 [tbd]
+```
